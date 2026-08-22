@@ -1,0 +1,16 @@
+on:
+    pull_request:
+        branches:
+            - main
+
+jobs:
+    test:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@v4
+
+            - name: Check README is not empty
+              run: test -s README.md
+        
