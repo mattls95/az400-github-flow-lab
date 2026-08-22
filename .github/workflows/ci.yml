@@ -21,6 +21,10 @@ jobs:
 
             - name: Install pytest
               run: pip install -U pytest
+            
+            - name: Install pytest-cov
+              run: pip install pytest-cov
 
             - name: Run tests
-              run: pytest
+              run: pytest --cov=app
+
