@@ -14,3 +14,13 @@ jobs:
             - name: Check README is not empty
               run: test -s README.md
         
+            - name: Set up Python
+              uses: actions/setup-python@v5
+              with:
+                python-version: "3.12"
+
+            - name: Install pytest
+              run: pip install -U pytest
+
+            - name: Run tests
+              run: pytest
