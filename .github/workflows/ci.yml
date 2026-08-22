@@ -23,7 +23,7 @@ jobs:
               run: pip install -U pytest
             
             - name: Install pytest-cov
-              run: pip install pytest-cov
+              run: pip install pytest-cov --cov-fail-under=80
 
             - name: Run tests
               run: pytest --cov=app
