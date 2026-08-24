@@ -1,0 +1,14 @@
+trigger:
+- main
+
+pr:
+- main
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+- script: |
+    echo "Repository: $(Build.Repository.Name)"
+    echo "Commit: $(Build.SourceVersion)"
+  displayName: Inspect GitHub source
