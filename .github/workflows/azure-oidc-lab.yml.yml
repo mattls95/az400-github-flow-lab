@@ -6,3 +6,20 @@ on:
 permissions:
   contents: read
   id-token: write
+
+jobs:
+  AzureLogin:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Azure Login
+        uses: azure/login@v2
+        with:
+          client-id: ${{ vars.AZURE_CLIENT_ID }}
+          tenant-id: ${{ vars.AZURE_TENANT_ID }}
+          subscription-id: ${{ vars.AZURE_SUBSCRIPTION_ID }}
+      - name: Azure Account Show
+        run: |
+          az account show --output table
+
+      
+  
