@@ -1,0 +1,8 @@
+name: Azure OIDC Lab
+
+on: 
+  workflow_dispatch
+
+permissions:
+  contents: read
+  id-token: write
